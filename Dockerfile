@@ -227,7 +227,7 @@ ARG TIMEZONE
 # the convention in the Kimai repository is: tags are always version numbers, branch names always start with a letter
 # if the KIMAI variable starts with a number (e.g. 2.24.0) we assume its a tag, otherwise its a branch
 RUN [[ $KIMAI =~ ^[0-9] ]] && export REF='tags' || export REF='heads' && \
-    wget -O "/opt/kimai.tar.gz" "https://github.com/kimai/kimai/archive/refs/${REF}/${KIMAI}.tar.gz" && \
+    wget -O "/opt/kimai.tar.gz" "https://github.com/agoeckner/kimai/archive/refs/${REF}/${KIMAI}.tar.gz" && \
     tar -xpzf /opt/kimai.tar.gz -C /opt/ && \
     mv /opt/kimai-${KIMAI} /opt/kimai
 
